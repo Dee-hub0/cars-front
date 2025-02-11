@@ -35,13 +35,13 @@ const CarList: React.FC = () => {
   }, []);
 
   const handleDelete = async (carId: number) => {
-    if (window.confirm('Are you sure you want to delete this car?')) {
+    if (window.confirm('Etes-vous sûr de vouloir supprimer cette voiture ?')) {
       try {
         await deleteCarAPI(carId);
         setCars(cars.filter((car) => car.id !== carId));
-        openSnackbar('Car deleted successfully!', 'success');
+        openSnackbar('Voiture supprimée avec succès.', 'success');
       } catch (error) {
-        openSnackbar('Failed to delete car', 'error');
+        openSnackbar('Erreure de suppression', 'error');
       }
     }
   };
